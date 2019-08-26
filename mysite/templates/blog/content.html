@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}blog article{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <div class="row text-center vertical-middle-sm">
+            <h1>{{ article.title }}</h1>
+        </div>
+        <p class="text-center">
+            <span>
+                {{ article.author.username }}
+                <span sytle="margin-left:20px">{{ publish }}</span>
+            </span>
+        </p>
+        <div>
+            {{ article.body }}
+        </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <h2>广告</h2>
+        <p>跟大呆猫学:thollang.pythonanywhere.com</p>
+        <img width="200px" src="{% static 'images/logo1.jpg' %}" alt="">
+    </div>
+</div>
+
+
+{% endblock %}
